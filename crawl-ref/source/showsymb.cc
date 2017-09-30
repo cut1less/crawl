@@ -47,6 +47,13 @@ static unsigned short _cell_feat_show_colour(const map_cell& cell,
     {
         if (cell.flags & MAP_EMPHASIZE)
             colour = fdef.seen_em_colour();
+        // Since 'coloured' is defined by whether the feat is in LOS (true if
+        // it is, false if not) or if the feat is purposely stripped of its
+        // real color (true if it's not stripped of color, false if it is),
+        // then a magic-mapped feature should be listed here (not in LOS, not
+        // using its real color).
+        else if (cell.flags & MAP_MAGIC_MAPPED_FLAG)
+            colour = fdef.map_colour();
         else
             colour = fdef.seen_colour();
 
