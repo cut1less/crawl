@@ -1478,7 +1478,7 @@ Kobolds
   to be a Kobold yourself.
 
   They tend to be more agile and weaker than Halflings, and are slightly more
-  talented at using most types of magic, particularly necromancy. They are
+  talented at using most types of magic, particularly summonings. They are
   competent in combat, especially with short blades, maces or crossbows, and are
   also very adept at using magical devices. They often live as scavengers,
   surviving on carrion (which they can eat even when not hungry), but are

@@ -490,7 +490,12 @@ int detect_items(int pow)
         map_radius = 7 + random2(7) + pow;
 
     else if (you.has_mutation(MUT_STRONG_NOSE))
-        map_radius = get_los_radius();
+    {
+        if (you.get_mutation_level(MUT_STRONG_NOSE) == 2)
+            map_radius = get_los_radius();
+        else
+            map_radius = get_los_radius() - 2;
+    }
     else
     {
         if (you.has_mutation(MUT_JELLY_GROWTH))

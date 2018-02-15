@@ -858,6 +858,8 @@ bool can_eat(const item_def &food, bool suppress_msg, bool check_hunger)
             FAIL("You aren't quite hungry enough to eat that!")
         }
     }
+    if (you.species == SP_KOBOLD && food.sub_type == FOOD_RATION)
+        FAIL("You don't trust rations enough to eat them.");
 
     // Any food types not specifically handled until here (e.g. meat
     // rations for non-herbivores) are okay.
@@ -880,7 +882,8 @@ corpse_effect_type determine_chunk_effect(const item_def &carrion)
 
 /**
  * Determine the 'effective' chunk type for a given input for the player.
- * E.g., ghouls/vampires treat rotting and poisonous chunks as normal chunks.
+ * E.g., ghouls/vampires/kobolds treat rotting and poisonous chunks as normal
+ * chunks.
  *
  * @param chunktype     The actual chunk type.
  * @return              A chunk type corresponding to the effect eating a chunk
@@ -891,7 +894,9 @@ corpse_effect_type determine_chunk_effect(corpse_effect_type chunktype)
     switch (chunktype)
     {
     case CE_NOXIOUS:
-        if (you.species == SP_GHOUL || you.species == SP_VAMPIRE)
+        if (you.species == SP_GHOUL
+            || you.species == SP_VAMPIRE
+            || you.species == SP_KOBOLD)
             chunktype = CE_CLEAN;
         break;
 

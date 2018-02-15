@@ -46,7 +46,7 @@ static const map<species_type, species_def> species_data =
     HT_LAND, US_ALIVE, SIZE_MEDIUM,
     10, 10, 10, // 30
     { STAT_STR, STAT_INT, STAT_DEX }, 4,
-    { { MUT_STRONG_NOSE, 1, 1 },  { MUT_FANGS, 1, 1 }, },
+    { { MUT_STRONG_NOSE, 2, 1 },  { MUT_FANGS, 1, 1 }, },
     { "Your experience applies equally to all skills."},
     { "distributed training", },
     { JOB_SKALD, JOB_WARPER, JOB_ARCANE_MARKSMAN, JOB_TRANSMUTER,
@@ -458,13 +458,13 @@ static const map<species_type, species_def> species_data =
     1, -2, 0, 3,
     MONS_KOBOLD,
     HT_LAND, US_ALIVE, SIZE_SMALL,
-    5, 9, 10, // 24
-    { STAT_STR, STAT_INT, STAT_DEX }, 5,
-    { { MUT_CARNIVOROUS, 1, 1 }, },
-    {},
+    6, 9, 9, // 24
+    { STAT_STR, STAT_DEX }, 4,
+    { { MUT_CARNIVOROUS, 1, 1 }, { MUT_STRONG_NOSE, 1, 1 }, },
+    { "You refuse to eat rations." },
     {},
     { JOB_HUNTER, JOB_BERSERKER, JOB_ARCANE_MARKSMAN, JOB_ENCHANTER,
-      JOB_CONJURER, JOB_SUMMONER },
+      JOB_CONJURER, JOB_SUMMONER, JOB_FIRE_ELEMENTALIST },
     { SK_SHORT_BLADES, SK_MACES_FLAILS, SK_STAVES, SK_CROSSBOWS },
 } },
 
